@@ -14,7 +14,7 @@ class PokemonDaoMock @Inject constructor() {
                 ataque = 40,
                 defensa = 50,
                 velocidad = 20,
-                tipo = 1 
+                tipo = "1"
             ),
             PokemonMock(
                 id = "2",
@@ -25,7 +25,7 @@ class PokemonDaoMock @Inject constructor() {
                 ataque = 55,
                 defensa = 45,
                 velocidad = 30,
-                tipo = 3
+                tipo = "3"
             ),
             PokemonMock(
                 id = "3",
@@ -36,7 +36,7 @@ class PokemonDaoMock @Inject constructor() {
                 ataque = 35,
                 defensa = 25,
                 velocidad = 15,
-                tipo = 1
+                tipo = "1"
             ),
             PokemonMock(
                 id = "4",
@@ -47,7 +47,7 @@ class PokemonDaoMock @Inject constructor() {
                 ataque = 60,
                 defensa = 40,
                 velocidad = 30,
-                tipo = 4
+                tipo = "4"
             ),
             PokemonMock(
                 id = "5",
@@ -58,10 +58,10 @@ class PokemonDaoMock @Inject constructor() {
                 ataque = 35,
                 defensa = 40,
                 velocidad = 40,
-                tipo = 2
+                tipo = "2"
             ),
             PokemonMock(
-                id = "5",
+                id = "6",
                 nombre = "Gengar",
                 imagen = "https://archives.bulbagarden.net/media/upload/thumb/4/47/0094Gengar.png/640px-0094Gengar.png",
                 nivel = 3,
@@ -69,7 +69,7 @@ class PokemonDaoMock @Inject constructor() {
                 ataque = 60,
                 defensa = 30,
                 velocidad = 30,
-                tipo = 5
+                tipo = "5"
             )
         )
     

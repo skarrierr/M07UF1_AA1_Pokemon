@@ -9,6 +9,6 @@ data class Tipo(
     val id : String = "-1",
     val nombre : String = "",
     val imagen : Uri = Uri.EMPTY,
-    val color : Color = Color.Transparent,
+    val color : String = ""
 
     )

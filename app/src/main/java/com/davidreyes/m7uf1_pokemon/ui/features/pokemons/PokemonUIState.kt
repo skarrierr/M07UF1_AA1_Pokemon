@@ -11,9 +11,10 @@ data class PokemonUiState(
     val ataque: Int = 0,
     val defensa: Int = 0,
     val velocidad: Int = 0,
-    val tipo: Int = -1,
+    val tipo: TipoUiState = TipoUiState(),
     val imagen: Uri = Uri.EMPTY
 )
+
 fun Pokemon.toPokemonUiState(): PokemonUiState =
     PokemonUiState(
         id = id,
@@ -23,6 +24,6 @@ fun Pokemon.toPokemonUiState(): PokemonUiState =
         ataque = ataque,
         defensa = defensa,
         velocidad = velocidad,
-        tipo = tipo,
+        tipo = tipo.toTipoUiState(),
         imagen = imagen
     )

@@ -10,6 +10,6 @@ data class Pokemon(
     val ataque: Int = 0,
     val defensa: Int = 0,
     val velocidad: Int = 0,
-    val tipo: Int = -1,
+    val tipo: Tipo = Tipo(),
     val imagen: Uri = Uri.EMPTY
 )

@@ -12,12 +12,16 @@ import javax.inject.Inject
 class PokemonViewModel @Inject constructor(
     private val pokemonRepository: PokemonRepository
 ):ViewModel() {
-    var pokemons: List<PokemonUiState> = mutableStateListOf()
+    var pokemonsState: List<PokemonUiState> = mutableStateListOf()
+
     private fun loadPokemons(){
         viewModelScope.launch {
-            pokemons = pokemonRepository.get().map { it.toPokemonUiState() }
+            pokemonsState = pokemonRepository.get().map { it.toPokemonUiState() }
         }
 
     }
 
+    init {
+        loadPokemons()
+    }
 }

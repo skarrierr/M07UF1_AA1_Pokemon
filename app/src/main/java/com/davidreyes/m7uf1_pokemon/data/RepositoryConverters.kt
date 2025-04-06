@@ -16,19 +16,6 @@ import com.davidreyes.m7uf1_pokemon.models.Equipo
 import com.davidreyes.m7uf1_pokemon.models.Objeto
 import com.davidreyes.m7uf1_pokemon.models.Tipo
 
-fun PokemonFirestore.toPokemon(): Pokemon =
-    Pokemon(
-        id = id,
-        nombre = nombre,
-        nivel = nivel,
-        vida = vida,
-        ataque = ataque,
-        defensa = defensa,
-        velocidad = velocidad,
-        tipo = tipo,
-        imagen = imagen.toUri()
-
-    )
 fun Pokemon.toPokemonFirestore(): PokemonFirestore =
     PokemonFirestore(
         id = id,
@@ -38,7 +25,7 @@ fun Pokemon.toPokemonFirestore(): PokemonFirestore =
         ataque = ataque,
         defensa = defensa,
         velocidad = velocidad,
-        tipo = tipo,
+        tipo = tipo.id,
         imagen = imagen.toString()
 
     )
@@ -52,7 +39,7 @@ fun PokemonMock.toPokemon(): Pokemon =
         ataque = ataque,
         defensa = defensa,
         velocidad = velocidad,
-        tipo = tipo,
+        tipo = Tipo(id = id),
         imagen = imagen.toUri()
 
     )
@@ -89,7 +76,7 @@ fun TipoFirestore.toTipo(): Tipo =
         id = id,
         nombre = nombre,
         imagen = imagen.toUri(),
-        color = color.toColor(),
+        color = color
 
     )
 
@@ -98,7 +85,7 @@ fun Tipo.toTipoFirestore(): TipoFirestore =
         id = id,
         nombre = nombre,
         imagen = imagen.toString(),
-        color = color.toString()
+        color = color
     )
 
 fun TipoMock.toTipo(): Tipo =
@@ -106,32 +93,27 @@ fun TipoMock.toTipo(): Tipo =
         id = id,
         nombre = nombre,
         imagen = imagen.toUri(),
-        color = color.toColor()
+        color = color
 
     )
-
-fun EquipoFirestore.toEquipo(): Equipo =
-    Equipo(
-        id = id,
-        nombre = nombre,
-        pokemons = pokemons.toSet()
-        )
 
 fun Equipo.toEquipoFirestore(): EquipoFirestore =
     EquipoFirestore(
         id = id,
         nombre = nombre,
-        pokemons = pokemons.toList()
+        pokemons = pokemons.toPokemonsString().toList()
     )
 
 fun EquipoMock.toEquipo(): Equipo =
     Equipo(
         id = id,
         nombre = nombre,
-        pokemons = pokemons.toSet()
+        pokemons = pokemons.toPokemons().toSet()
 
     )
 
+fun Set<Pokemon>.toPokemonsString(): List<String> =
+    this.map { it.id }
 
-fun String.toColor(): Color =
-    Color(this.toLong(16))
+fun List<String>.toPokemons(): List<Pokemon> =
+    this.map { Pokemon(id = it) }

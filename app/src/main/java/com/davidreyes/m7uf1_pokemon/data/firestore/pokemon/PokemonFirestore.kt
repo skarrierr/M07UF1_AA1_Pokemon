@@ -8,6 +8,6 @@ data class PokemonFirestore(
     val ataque: Int = 0,
     val defensa: Int = 0,
     val velocidad: Int = 0,
-    val tipo: Int = -1,
+    val tipo: String = "-1",
     val imagen: String = ""
 )

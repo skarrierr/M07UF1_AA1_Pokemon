@@ -67,7 +67,10 @@ dependencies {
     implementation(libs.androidx.hilt.navigation.compose)
     ksp(libs.dagger.hilt.android.compiler)
     kspAndroidTest(libs.dagger.hilt.android.compiler)
+    implementation(libs.androidx.material.icons.core)
+    implementation(libs.androidx.material.icons.extended)
     implementation(libs.compose.navigation)
     implementation(libs.coil.compose)
     implementation(libs.kotlinx.serializarion.json)
+    implementation(libs.firebase.auth.ktx)
 }

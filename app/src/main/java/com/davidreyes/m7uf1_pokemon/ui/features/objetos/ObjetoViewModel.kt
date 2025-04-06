@@ -12,12 +12,16 @@ import javax.inject.Inject
 class ObjetoViewModel @Inject constructor(
     private val objetoRepository: ObjetoRepository
 ): ViewModel() {
-    var objetos:List<ObjetoUiState> = mutableStateListOf()
+    var objetosState:List<ObjetoUiState> = mutableStateListOf()
+
     private fun loadObjetos(){
         viewModelScope.launch {
-            objetos = objetoRepository.get().map { it.toObjetoUiState() }
+            objetosState = objetoRepository.get().map { it.toObjetoUiState() }
         }
 
     }
 
+    init {
+        loadObjetos()
+    }
 }
