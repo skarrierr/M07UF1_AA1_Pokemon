@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "257768792059",
+    "project_id": "m7uf1davidreyes",
+    "storage_bucket": "m7uf1davidreyes.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:257768792059:android:797c75fe1739eddf11f55e",
+        "android_client_info": {
+          "package_name": "com.davidreyes.m7uf1_pokemon"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1w9E7Q7obfuEDXoxFbOlAACp1Kzu67K4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
