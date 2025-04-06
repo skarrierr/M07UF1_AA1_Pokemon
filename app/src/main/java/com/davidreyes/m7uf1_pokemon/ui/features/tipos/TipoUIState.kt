@@ -1,7 +1,6 @@
 package com.davidreyes.m7uf1_pokemon.ui.features.tipos
 
 import android.net.Uri
-import com.davidreyes.m7uf1_pokemon.models.Objeto
 import com.davidreyes.m7uf1_pokemon.models.Tipo
 
 

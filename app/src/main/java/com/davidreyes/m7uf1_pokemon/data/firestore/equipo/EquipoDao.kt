@@ -1,6 +1,7 @@
 package com.davidreyes.m7uf1_pokemon.data.firestore.equipo
 
 import com.davidreyes.m7uf1_pokemon.data.firestore.FirestoreConstants
+import com.davidreyes.m7uf1_pokemon.data.firestore.pokemon.PokemonFirestore
 import com.davidreyes.m7uf1_pokemon.data.firestore.tipo.TipoFirestore
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
@@ -42,5 +43,11 @@ class EquipoDao @Inject constructor(
             .await()
 
         return querySnapshot.size()
+    }
+    fun insert(equipo: EquipoFirestore) {
+        firestore
+            .collection(FirestoreConstants.Equipo.COLLECTION)
+            .document(equipo.id)
+            .set(equipo)
     }
 }

@@ -2,7 +2,6 @@ package com.davidreyes.m7uf1_pokemon.ui.features.objetos
 
 import android.net.Uri
 import com.davidreyes.m7uf1_pokemon.models.Objeto
-import com.davidreyes.m7uf1_pokemon.models.Pokemon
 
 
 data class ObjetoUiState(

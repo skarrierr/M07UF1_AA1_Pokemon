@@ -1,7 +1,6 @@
 package com.davidreyes.m7uf1_pokemon.ui.features.pokemons
 
 import android.net.Uri
-import androidx.core.net.toUri
 import com.davidreyes.m7uf1_pokemon.models.Pokemon
 
 data class PokemonUiState(

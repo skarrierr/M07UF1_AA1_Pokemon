@@ -2,6 +2,7 @@ package com.davidreyes.m7uf1_pokemon.data
 
 import com.davidreyes.m7uf1_pokemon.data.firestore.objeto.ObjetoDao
 import com.davidreyes.m7uf1_pokemon.models.Objeto
+import com.davidreyes.m7uf1_pokemon.models.Pokemon
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
@@ -19,6 +20,10 @@ class ObjetoRepository @Inject constructor(
 
     suspend fun count(): Int = withContext(Dispatchers.IO) {
         dao.count()
+    }
+
+    suspend fun insert(objeto: Objeto) = withContext(Dispatchers.IO) {
+        dao.insert(objeto.toObjetoFirestore())
     }
 
 

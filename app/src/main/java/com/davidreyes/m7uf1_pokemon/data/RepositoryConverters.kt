@@ -8,7 +8,10 @@ import androidx.core.net.toUri
 import com.davidreyes.m7uf1_pokemon.data.firestore.equipo.EquipoFirestore
 import com.davidreyes.m7uf1_pokemon.data.firestore.objeto.ObjetoFirestore
 import com.davidreyes.m7uf1_pokemon.data.firestore.tipo.TipoFirestore
+import com.davidreyes.m7uf1_pokemon.data.mocks.equipo.EquipoMock
+import com.davidreyes.m7uf1_pokemon.data.mocks.objeto.ObjetoMock
 import com.davidreyes.m7uf1_pokemon.data.mocks.pokemon.PokemonMock
+import com.davidreyes.m7uf1_pokemon.data.mocks.tipo.TipoMock
 import com.davidreyes.m7uf1_pokemon.models.Equipo
 import com.davidreyes.m7uf1_pokemon.models.Objeto
 import com.davidreyes.m7uf1_pokemon.models.Tipo
@@ -63,12 +66,47 @@ fun ObjetoFirestore.toObjeto(): Objeto =
 
     )
 
+fun Objeto.toObjetoFirestore(): ObjetoFirestore =
+    ObjetoFirestore(
+        id = id,
+        nombre = nombre,
+        precio = precio,
+        imagen = imagen.toString()
+
+    )
+
+fun ObjetoMock.toObjeto(): Objeto =
+    Objeto(
+        id = id,
+        nombre = nombre,
+        precio = precio,
+        imagen = imagen.toUri()
+
+    )
+
 fun TipoFirestore.toTipo(): Tipo =
     Tipo(
         id = id,
         nombre = nombre,
         imagen = imagen.toUri(),
         color = color.toColor(),
+
+    )
+
+fun Tipo.toTipoFirestore(): TipoFirestore =
+    TipoFirestore(
+        id = id,
+        nombre = nombre,
+        imagen = imagen.toString(),
+        color = color.toString()
+    )
+
+fun TipoMock.toTipo(): Tipo =
+    Tipo(
+        id = id,
+        nombre = nombre,
+        imagen = imagen.toUri(),
+        color = color.toColor()
 
     )
 
@@ -84,6 +122,14 @@ fun Equipo.toEquipoFirestore(): EquipoFirestore =
         id = id,
         nombre = nombre,
         pokemons = pokemons.toList()
+    )
+
+fun EquipoMock.toEquipo(): Equipo =
+    Equipo(
+        id = id,
+        nombre = nombre,
+        pokemons = pokemons.toSet()
+
     )
 
 

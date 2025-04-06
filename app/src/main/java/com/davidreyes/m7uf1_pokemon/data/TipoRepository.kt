@@ -21,6 +21,10 @@ class TipoRepository @Inject constructor(
         dao.count()
     }
 
+    suspend fun insert(tipo: Tipo) = withContext(Dispatchers.IO) {
+        dao.insert(tipo.toTipoFirestore())
+    }
+
 
 
 }

@@ -2,6 +2,7 @@ package com.davidreyes.m7uf1_pokemon.data.firestore.objeto
 
 import com.davidreyes.m7uf1_pokemon.data.firestore.FirestoreConstants
 import com.davidreyes.m7uf1_pokemon.data.firestore.equipo.EquipoFirestore
+import com.davidreyes.m7uf1_pokemon.data.firestore.pokemon.PokemonFirestore
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
 import kotlinx.coroutines.tasks.await
@@ -35,5 +36,12 @@ class ObjetoDao @Inject constructor(
             .await()
 
         return querySnapshot.size()
+    }
+
+    fun insert(objeto: ObjetoFirestore) {
+        firestore
+            .collection(FirestoreConstants.Objeto.COLLECTION)
+            .document(objeto.id)
+            .set(objeto)
     }
 }
